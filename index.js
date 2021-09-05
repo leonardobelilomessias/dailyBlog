@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");0
 const connection = require("./database/database");
 const categoriesControle = require("./categories/categories.controle");
 const articlesControle = require("./articles/articles.controles");
+const Article = require("./articles/Article");
+const Category = require("./categories/Category")
 
 //Definição de template engine
 app.set('view engine', 'ejs');
