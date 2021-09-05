@@ -8,7 +8,7 @@ router.get("/article",(req,res)=>{
 });
 
 router.get("/article/new",(req,res)=>{
-    res.send("Novo artivo")
+    res.send("Novo artigo")
 })
 
 module.exports = router;

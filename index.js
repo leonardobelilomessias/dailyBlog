@@ -14,6 +14,8 @@ app.set('view engine', 'ejs');
 //Utilização do bodyparser(coletar dados via corpo formulario)
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
+//Utilização recursos estaticos
+app.use(express.static('public'))
 
 //Autenticação conexão com banco de dados
 connection.authenticate().then(()=>{
@@ -22,8 +24,6 @@ connection.authenticate().then(()=>{
     console.log(error) 
 })
 
-//Utilização recursos estaticos
-app.use(express.static('public'))
 
 // Chamada de rotas
 app.use("/",categoriesControle);
