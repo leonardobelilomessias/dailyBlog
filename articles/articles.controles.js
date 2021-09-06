@@ -23,7 +23,6 @@ router.get("/admin/articles/new",(req,res)=>{
     
 })
 
-
 router.post("/article/save",(req,res)=>{
     let title = req.body.title;
     let body = req.body.body;
@@ -38,5 +37,23 @@ router.post("/article/save",(req,res)=>{
         res.redirect("/admin/articles")
     })
 });
-   
+
+router.post("/articles/delete",(req,res)=>{
+    let id = req.body.id;
+    if(id != undefined){
+        if(!isNaN(id)){
+            Article.destroy({where: {
+                id:id
+            }}).then(()=>{
+                res.redirect("/admin/articles");
+            })
+        }else{
+            res.redirect("/admin/articles");
+            
+        }
+    }else{
+        res.redirect("/admin/articles")
+    }
+})
+
 module.exports = router;
