@@ -4,6 +4,8 @@
      <hr>
      <h2>Categorias</h2>
      <hr>
+     <a href=" categories/new"><button class="btn btn-success">Criar categoria</button></a>
+    <hr>
      <table class="table table-bordered">
          <thead>
              <tr>
@@ -14,14 +16,26 @@
              </tr>
          </thead>
          <tbody>
-             <tr>
-                 <th>01</th>
-                 <th>dev web</th>
-                 <th>dev-web</th>
-                 <th></th>
-             </tr>
+             <% categories.forEach((categoria)=>{ %>
+                <tr>
+                    <th> <%= categoria.id %> </th>
+                    <th>  <%=  categoria.title %> </th>
+                    <th> <%= categoria.slug %> </th>
+                    <th> 
+                         <a href="/admin/categories/edit/<%= categoria.id  %> " class=" btn btn-warning" style="display:inline;">Editar</a>
+                        <form method="POST" action="/categories/delete">
+                            <input type="hidden" name="id" value="<%=categoria.id%>">
+                            <button  class="btn btn-danger" >Deletar</button>
+                        </form>
+                    </th>
+                </tr>
+             <% }) %> 
          </tbody>
      </table>
  </div>
-
-<%- include("../../partials/footer.ejs") %> 
+ <script>
+     
+    
+    
+</script> 
+<%- include("../../partials/footer.ejs") %>
