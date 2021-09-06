@@ -51,7 +51,6 @@ router.get("/admin/categories/edit/:id",(req,res)=>{
     }
     Category.findByPk(id).then(category=>{
         if(category != undefined){
-            
             res.render("admin/categories/edit",{category:category})
         }else{
             res.redirect("/admin/categories")
@@ -65,7 +64,7 @@ router.post("/categories/update",(req,res)=>{
     Category.update({title:title,slug:slugify(title)},{where:{
         id:id
     }}).then(()=>{
-        res.redirect("admin/categories")
+        res.redirect("/admin/categories")
     })
 })
  
