@@ -13,7 +13,10 @@
           selector: '#ar',
           plugins:[
               'advlist autolink link image lists print preview hr searchreplace wordcount fullscrenn emoticons'
-          ]
+          ],
+          init_instance_callback:()=>{
+            tinymce.get("ar").setContent($("#content").html())
+          }
         });
         </script>
     

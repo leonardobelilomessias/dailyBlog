@@ -22,10 +22,10 @@
                     <th>  <%=  categoria.title %> </th>
                     <th> <%= categoria.slug %> </th>
                     <th> 
-                         <a href="/admin/categories/edit/<%= categoria.id  %> " class=" btn btn-warning" style="display:inline;">Editar</a>
+                         <a style="display:inline" href="/admin/categories/edit/<%= categoria.id  %> " class=" btn btn-warning">Editar</a>
                         <form method="POST" action="/categories/delete">
                             <input type="hidden" name="id" value="<%=categoria.id%>">
-                            <button  class="btn btn-danger" >Deletar</button>
+                            <button style="display:inline"  class="btn btn-danger" >Deletar</button>
                         </form>
                     </th>
                 </tr>
