@@ -1,2 +1,2 @@
 # dailyBlog
-Blog de compartilhamento de coisas cotidianas.
+Blog de compartilhamento de conteúdo.
